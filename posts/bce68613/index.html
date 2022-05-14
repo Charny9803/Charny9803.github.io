@@ -13,21 +13,23 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="Charny Chen">
+  <meta name="author" content="莫扬">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="article">
-<meta property="og:title" content="测试文章">
-<meta property="og:url" content="http://example.com/posts/7a6a6b5a/index.html">
+    <meta name="description" content="1. 初识MySQL1.1 数据库概念 数据库的好处 持久化数据到本地 可以实现结构化查询，方便管理   数据库相关概念 DB：数据库，保存一组有组织的数据的容器 DBMS：数据库管理系统，又称为数据库软件（产品），用于管理DB中的数据 SQL：结构化查询语言，用于和DBMS通信的语言   数据库存储数据的特点 将数据放到表中，表再放到库中 一个数据库中可以有多个表，每个表都有一个名字，用来标识自">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL基础">
+<meta property="og:url" content="http://example.com/posts/bce68613/index.html">
 <meta property="og:site_name" content="Charny&#39;s blog">
+<meta property="og:description" content="1. 初识MySQL1.1 数据库概念 数据库的好处 持久化数据到本地 可以实现结构化查询，方便管理   数据库相关概念 DB：数据库，保存一组有组织的数据的容器 DBMS：数据库管理系统，又称为数据库软件（产品），用于管理DB中的数据 SQL：结构化查询语言，用于和DBMS通信的语言   数据库存储数据的特点 将数据放到表中，表再放到库中 一个数据库中可以有多个表，每个表都有一个名字，用来标识自">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-04-26T10:11:49.000Z">
-<meta property="article:modified_time" content="2022-04-26T10:23:35.230Z">
+<meta property="article:published_time" content="2022-04-26T12:16:25.000Z">
+<meta property="article:modified_time" content="2022-04-26T15:04:21.189Z">
 <meta property="article:author" content="Charny Chen">
 <meta name="twitter:card" content="summary_large_image">
   
   
-  <title>测试文章 - Charny&#39;s blog</title>
+  <title>MySQL基础 - Charny&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -173,7 +175,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="测试文章">
+            <span class="h2" id="subtitle" title="MySQL基础">
               
             </span>
 
@@ -183,7 +185,7 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-04-26 18:11" pubdate>
+      <time datetime="2022-04-26 20:16" pubdate>
         2022年4月26日 晚上
       </time>
     </span>
@@ -194,7 +196,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      0 字
+      1k 字
     </span>
   
 
@@ -203,7 +205,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1 分钟
+      9 分钟
     </span>
   
 
@@ -232,10 +234,76 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">测试文章</h1>
+            <h1 style="display: none">MySQL基础</h1>
             
             <div class="markdown-body">
-              
+              <h1 id="1-初识MySQL"><a href="#1-初识MySQL" class="headerlink" title="1. 初识MySQL"></a>1. 初识MySQL</h1><h2 id="1-1-数据库概念"><a href="#1-1-数据库概念" class="headerlink" title="1.1 数据库概念"></a>1.1 数据库概念</h2><ul>
+<li>数据库的好处<ol>
+<li>持久化数据到本地</li>
+<li>可以实现结构化查询，方便管理</li>
+</ol>
+</li>
+<li>数据库相关概念<ol>
+<li>DB：数据库，保存一组有组织的数据的容器</li>
+<li>DBMS：数据库管理系统，又称为数据库软件（产品），用于管理DB中的数据</li>
+<li>SQL：结构化查询语言，用于和DBMS通信的语言</li>
+</ol>
+</li>
+<li>数据库存储数据的特点<ol>
+<li>将数据放到表中，表再放到库中</li>
+<li>一个数据库中可以有多个表，每个表都有一个名字，用来标识自己。表名具有<strong>唯一</strong>性。</li>
+<li>表具有一些特性，这些特性定义了数据在表中如何存储，类似Java中“类”的设计。</li>
+<li>表由列组成，也称为字段。所有表都是由一个或多个列组成的，每一列类似java 中的”属性”</li>
+<li>表中的数据是按<strong>行</strong>存储的，每一行类似于Java中的“对象”。</li>
+</ol>
+</li>
+</ul>
+<h2 id="1-2-MySQL产品的介绍和安装"><a href="#1-2-MySQL产品的介绍和安装" class="headerlink" title="1.2 MySQL产品的介绍和安装"></a>1.2 MySQL产品的介绍和安装</h2><ul>
+<li><p>MySQL服务的启动和停止</p>
+<ul>
+<li>方式一：计算机——右击管理——服务</li>
+<li>方式二：通过管理员身份运行<figure class="highlight dos"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs dos"><span class="hljs-built_in">net</span> <span class="hljs-built_in">start</span> 服务名（启动服务）<br><span class="hljs-built_in">net</span> stop 服务名（停止服务）<br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>MySQL服务的登录和退出   </p>
+<ul>
+<li>方式一：通过mysql自带的客户端  (只限于root用户)</li>
+<li>方式二：通过windows自带的客户端<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk">登录：	mysql 【-h主机名 -P端口号 】-u用户名 -p密码<br>退出： <span class="hljs-keyword">exit</span> 或 ctrl+C<br></code></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>MySQL的常见命令 </p>
+<ol>
+<li>查看当前所有的数据库<br> <code>show databases;</code></li>
+<li>打开指定的库<br> <code>use 库名;</code></li>
+<li>查看当前库的所有表<br> <code>show tables;</code></li>
+<li>查看其它库的所有表<br> <code>show tables from 库名;</code></li>
+<li>创建表 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs lua"><span class="hljs-built_in">create</span> <span class="hljs-built_in">table</span> 表名(<br>    列名 列类型,<br>    列名 列类型,<br>    ……);<br></code></pre></td></tr></table></figure></li>
+<li><p>查看表结构<br> <code>desc 表名;</code></p>
+</li>
+<li><p>查看服务器的版本<br> 方式一：登录到mysql服务端<br> <code>select version();</code><br> 方式二：没有登录到mysql服务端<br> <code>mysql --version</code> 或 <code>mysql -V</code></p>
+</li>
+</ol>
+</li>
+<li><p>MySQL的语法规范</p>
+<ol>
+<li>不区分大小写,但建议关键字大写，表名、列名小写</li>
+<li>每条命令最好用分号结尾</li>
+<li>每条命令根据需要，可以进行缩进 或换行</li>
+<li>注释<br> 单行注释：#注释文字<br> 单行注释：— 注释文字<br> 多行注释：/<em> 注释文字 </em>/</li>
+</ol>
+</li>
+<li><p>SQL的语言分类</p>
+<ul>
+<li>DQL（Data Query Language）：数据查询语言<br>  <code>select</code></li>
+<li>DML（Data Manipulate Language）: 数据操作语言<br>  <code>insert 、update、delete</code></li>
+<li>DDL（Data Define Languge）：数据定义语言<br>  <code>create、drop、alter</code></li>
+<li>TCL（Transaction Control Language）：事务控制语言<br>  <code>commit、rollback</code></li>
+</ul>
+</li>
+</ul>
+
             </div>
             <hr>
             <div>
@@ -244,7 +312,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E6%B5%8B%E8%AF%95/">测试</a>
+                      <a class="hover-with-bg" href="/categories/MySQL/">MySQL</a>
                     
                   </div>
                 
@@ -262,15 +330,21 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/bce68613/">
+                      <a href="/posts/0/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">MySQL基础</span>
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/posts/7a6a6b5a/">
+                        <span class="hidden-mobile">测试文章</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
