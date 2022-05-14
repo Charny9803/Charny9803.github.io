@@ -262,27 +262,30 @@
 <li><p>MySQL服务的启动和停止</p>
 <ul>
 <li>方式一：计算机——右击管理——服务</li>
-<li>方式二：通过管理员身份运行<figure class="highlight dos"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs dos"><span class="hljs-built_in">net</span> <span class="hljs-built_in">start</span> 服务名（启动服务）<br><span class="hljs-built_in">net</span> stop 服务名（停止服务）<br></code></pre></td></tr></table></figure>
-</li>
+<li>方式二：通过管理员身份运行  <figure class="highlight dos"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><pre><code class="hljs dos"><span class="hljs-built_in">net</span> <span class="hljs-built_in">start</span> 服务名（启动服务）<br><span class="hljs-built_in">net</span> stop 服务名（停止服务）<br></code></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><p>MySQL服务的登录和退出   </p>
 <ul>
 <li>方式一：通过mysql自带的客户端  (只限于root用户)</li>
-<li>方式二：通过windows自带的客户端<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk">登录：	mysql 【-h主机名 -P端口号 】-u用户名 -p密码<br>退出： <span class="hljs-keyword">exit</span> 或 ctrl+C<br></code></pre></td></tr></table></figure>
-</li>
+<li>方式二：通过windows自带的客户端  <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk">登录：	mysql 【-h主机名 -P端口号 】-u用户名 -p密码<br>退出： <span class="hljs-keyword">exit</span> 或 ctrl+C<br></code></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><p>MySQL的常见命令 </p>
 <ol>
-<li>查看当前所有的数据库<br> <code>show databases;</code></li>
-<li>打开指定的库<br> <code>use 库名;</code></li>
-<li>查看当前库的所有表<br> <code>show tables;</code></li>
-<li>查看其它库的所有表<br> <code>show tables from 库名;</code></li>
-<li>创建表 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs lua"><span class="hljs-built_in">create</span> <span class="hljs-built_in">table</span> 表名(<br>    列名 列类型,<br>    列名 列类型,<br>    ……);<br></code></pre></td></tr></table></figure></li>
+<li><p>查看当前所有的数据库<br> <code>show databases;</code></p>
+</li>
+<li><p>打开指定的库<br> <code>use 库名;</code></p>
+</li>
+<li><p>查看当前库的所有表<br> <code>show tables;</code></p>
+</li>
+<li><p>查看其它库的所有表<br> <code>show tables from 库名;</code></p>
+</li>
+<li><p>创建表</p>
+ <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs lua"><span class="hljs-built_in">create</span> <span class="hljs-built_in">table</span> 表名(<br>    列名 列类型,<br>    列名 列类型,<br>    ……);<br></code></pre></td></tr></table></figure></li>
 <li><p>查看表结构<br> <code>desc 表名;</code></p>
 </li>
-<li><p>查看服务器的版本<br> 方式一：登录到mysql服务端<br> <code>select version();</code><br> 方式二：没有登录到mysql服务端<br> <code>mysql --version</code> 或 <code>mysql -V</code></p>
+<li><p>查看服务器的版本<br> 方式一：登录到mysql服务端<br> <code> select version();</code><br> 方式二：没有登录到mysql服务端<br> <code> mysql --version</code> 或 <code>mysql -V</code></p>
 </li>
 </ol>
 </li>
@@ -291,14 +294,14 @@
 <li>不区分大小写,但建议关键字大写，表名、列名小写</li>
 <li>每条命令最好用分号结尾</li>
 <li>每条命令根据需要，可以进行缩进 或换行</li>
-<li>注释<br> 单行注释：#注释文字<br> 单行注释：— 注释文字<br> 多行注释：/<em> 注释文字 </em>/</li>
+<li>注释<br> 单行注释：#注释文字<br> 单行注释：– 注释文字<br> 多行注释：&#x2F;* 注释文字 *&#x2F;</li>
 </ol>
 </li>
 <li><p>SQL的语言分类</p>
 <ul>
 <li>DQL（Data Query Language）：数据查询语言<br>  <code>select</code></li>
-<li>DML（Data Manipulate Language）: 数据操作语言<br>  <code>insert 、update、delete</code></li>
-<li>DDL（Data Define Languge）：数据定义语言<br>  <code>create、drop、alter</code></li>
+<li>DML（Data Manipulate Language）: 数据操作语言<br>  <code> insert 、update、delete</code></li>
+<li>DDL（Data Define Languge）：数据定义语言<br>  <code>create、drop、alter </code></li>
 <li>TCL（Transaction Control Language）：事务控制语言<br>  <code>commit、rollback</code></li>
 </ul>
 </li>
